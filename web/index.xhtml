@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+    <!-- Definição dos Metadados da página -->
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta name="description" content="Sistema de Salas de Aulas - Trabalho de SAD"></meta>
+    <meta name="author" content="Amilton, Jair, Natanael e Rudah"></meta>
+        
+    <!-- Importanto arquivos CSS, Fonts, JavaScript, jQuery necessários -->
+    <!-- Localmente -->
+    <!-- CSS do Bootstrap -->
+    <link  rel="stylesheet" href="resources/css/bootstrap.min.css"></link>
+    <!-- CSS CINTTEC-Plataforma de Demanda Tecnológica -->
+    <link  rel="stylesheet" href="resources/css/style.css"></link>
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+	
+    <!-- MaxCDN (CDN - Content Delivery Network) arquivos CSS, JavaScript e jQuery para página em nuvem --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
+
+    <!-- Popover -->
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({html:true});
+        });
+    </script>
+        <title>SAD</title>
+    </h:head>
+    
+    <h:body>
+        <div class="container-fluid">
+        <!-- Menu Navegação -->
+        <!-- Logo e alterna o menu nevegação em uma exibição agrupada para ficar melhor em celular-->
+	<header class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">		
+                    <div class="navbar-header page-scroll">
+                        <a class="navbar-brand" href="index.html">TRABALHO DE SAD - Sistema de Apoio a Distribuição de Salas</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Relação de links no menu -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="resultadobusca.html">Busca Avançada</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#"></a>
+                            </li>
+                            <li>
+				<a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Entre</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background-color:#777; height:2px;"></div>
+            </nav>
+    	</header>
+    
+	
+	<!-- Conteúdo da Página -->
+	<div id="buscar" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="padding-top:70px; text-align:center;">
+                    <h2>Busque aqui o seu Horário</h2>
+                    <p>Faça uma busca rápida e encontre o horario da sua turma, referente ao atual período.</p>
+		</div>
+                <!-- Formulário de busca básico -->
+                <div class="form-control">
+                    <form action="resultadobusca.html" method="GET" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off">
+                    <div  style="width:500px; margin: auto">
+                        <input type="email" class="form-control" id="email" placeholder="Informe o código da sua Turma: COMP0000..." style="float:left; width:450px;"></input>
+			<button type="submit" class="btn btn-default" style="float:right"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                    </form>
+		</div>
+            </div>
+	</div>
+	
+        <hr></hr>	
+	
+	<!-- Informações sobre o trabalho -->
+	<div id="sobre" class="container-fluid" style="padding-top:40px">
+            <div id="head" class="col-md-12">
+                <div style="text-align: center">
+                	<h2>Conheça o Sistema de Apoio a Distribuição de Salas</h2>
+               	</div>
+		<div>
+                    <p style="text-align:justify">O Sistema foi concebido a partir de uma atividade da matéria <b>Sistemas de Apoio a Decisão (<i>SAD</i>)</b>, do curso de Ciência da Computação da <b>Universidade Federal de Sergipe</b>.
+                    O problema da alocação de salas é uma variação mais restrita do problema de otimização Job Shop Scheduling Problem. Esse problema é NP-Difícil. Por isso, o principal objetivo do trabalho era desenvolver um sistema que aumentasse efetivamente a distribuição de salas.
+                    Assim, um bom sistema deverá garantir que nenhuma solução inválida seja gerada e que as preferências possam ser seguidas. O SAD desenvolvido nos trabalho possui três componentes vistos em aula: banco de dados, interface e modelo.</p>
+                </div>
+            </div>
+	</div>
+	
+        <br></br>
+	
+	<div id="alunos" class="container-fluid" style="padding-top:40px">
+            <div style="text-align: center">
+                <h2>Alunos Envolvidos</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><span class="glyphicon glyphicon-user"></span> Aluno 1</h4>
+                    </div>
+                    <div class="panel-body text-justify">
+                        <div class="col-md-4" style=" background:#777; color:#777; width:100px; height:100px; line-height:300px; vertical-align:middle; text-align:center; font-size:30px;">
+                        </div>
+                        <div class="col-md-8">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><span class="glyphicon glyphicon-user"></span> Aluno 2</h4>
+                    </div>
+                    <div class="panel-body text-justify">
+                        <div class="col-md-4" style=" background:#777; color:#777; width:100px; height:100px;; line-height:300px; vertical-align:middle; text-align:center; font-size:30px;">
+                        </div>
+			<div class="col-md-8">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+			</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><span class="glyphicon glyphicon-user"></span> Aluno 3</h4>
+                    </div>
+                    <div class="panel-body text-justify">
+                        <div class="col-md-4" style=" background:#777; color:#777; width:100px; height:100px; line-height:300px; vertical-align:middle; text-align:center; font-size:30px;"></div>
+						<div class="col-md-8">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+						</div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><span class="glyphicon glyphicon-user"></span> Aluno 4</h4>
+                    </div>
+                    <div class="panel-body text-justify">
+                        <div class="col-md-4" style=" background:#777; color:#777; width:100px; height:100px; line-height:300px; vertical-align:middle; text-align:center; font-size:30px;"></div>
+                        <div class="col-md-8">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <hr></hr>
+            
+	<!-- Rodapé -->
+        <br> </br>
+	<footer class="row">
+            <div class="footer-above text-center">       
+                <div class="footer-below">
+                    <div class="container text-center">
+			<div class="col-lg-12">
+                            São Cristóvão/SE 2015
+			</div>
+                    </div>
+                </div>
+            </div>
+	</footer>
+            <br> </br>
+    </div>
+    </h:body>
+</html>
+

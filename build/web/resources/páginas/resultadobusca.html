@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<!-- Definição dos Metadados da página -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sistema de Salas de Aulas - Trabalho de SAD">
+    <meta name="author" content="Amilton, Jair, Natanael e Rudah">
+	
+    <!-- Importanto arquivos CSS, Fonts, JavaScript, jQuery necessários -->
+	
+    <!-- Localmente -->
+    <!-- CSS do Bootstrap -->
+    <link  rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <!-- CSS CINTTEC-Plataforma de Demanda Tecnológica -->
+    <link  rel="stylesheet" href="resources/css/style.css">
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+    <!-- MaxCDN (CDN - Content Delivery Network) arquivos CSS, JavaScript e jQuery para página em nuvem --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
+
+    <!-- Popover -->
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({html:true});
+        });
+    </script>
+
+    <title>SAD</title>
+	
+</head>
+
+<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid">
+        <!-- Menu Navegação -->
+        <!-- Logo e alterna o menu nevegação em uma exibição agrupada para ficar melhor em celular-->
+	<header class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">		
+                    <div class="navbar-header page-scroll">
+                        <a class="navbar-brand" href="index.html">TRABALHO DE SAD - Sistema de Apoio a Distribuição de Salas</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Relação de links no menu -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="resultadobusca.html">Busca Avançada</a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#"></a>
+                            </li>
+                            <li>
+				<a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Entre</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background-color:#777; height:2px;"></div>
+            </nav>
+    	</header>
+	
+	<!-- Conteúdo da Página -->
+	<br>
+	<br>
+	<br>
+	
+	<!-- Mapa do site -->
+	<div class="span9">
+		<ul class="breadcrumb">
+			<li><a href="index.html">Início</a> <span class="divider"></span></li>
+			<li class="active">Resultado da Busca</li>
+		</ul>
+	</div>
+	
+	<!-- Conteúdo -->
+	<div class="container-fluid">
+		<h3>Resultado da Busca</h3>
+		
+		<div id="corpoBusca">
+			<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Horário</th>
+				<th>Segunda</th>
+				<th>Terça</th>
+				<th>Quarta</th>
+				<th>Quinta</th>
+				<th>Sexta</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>13:00h ás 14:00h</td>
+				<td><a href="#" title="Informações" data-toggle="popover" data-placement="Right" data-trigger="hover" data-content="Aqui estarão as informações <br> teste">COMP0000</a></td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>14:00h ás 15:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>15:00h ás 16:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>16:00h ás 17:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>17:00h ás 18:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>18:00h ás 19:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<hr>
+
+	<!-- Rodapé -->
+	<br>
+	<footer class="row">
+            <div class="footer-above text-center">       
+                <div class="footer-below">
+                    <div class="container text-center">
+			<div class="col-lg-12">
+                            São Cristóvão/SE 2015
+			</div>
+                    </div>
+                </div>
+            </div>
+	</footer>
+	<br>	
+    </div>	
+</body>
+
+</html>
