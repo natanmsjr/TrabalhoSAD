@@ -70,7 +70,7 @@
                                 <a href="#page-top"></a>
                             </li>
                             <li class="page-scroll">
-                                <a href="busca.xhtml">Busca Avançada</a>
+                                <a href="busca.xhtml">Consultar Turma</a>
                             </li>
                             <li class="page-scroll">
                                 <a href="#"></a>
@@ -94,27 +94,46 @@
 	<div class="span9">
 		<ul class="breadcrumb">
 			<li><a href="index.xhtml">Início</a> <span class="divider"></span></li>
-			<li class="active">Busca</li>
+			<li class="active">Consultar Turma</li>
 		</ul>
 	</div>
         
         <!-- Conteúdo da Página -->
         <div class="container-fluid">
-		<h3>Busca</h3>          
-                
+            <div class="row">
+                <div class="col-md-12" style="text-align:center;">
+                    <h2>Consultar Turma</h2>
+		</div>
+            </div>
                 <!-- Formulário de busca básico -->
-                <div class="form-control">
+                <div id="busca">
                     <form action="resultadobusca.xhtml" method="GET" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off">
-                    <div  style="width:500px; margin: auto">
+                    <div  class="form-group" style="width:500px; margin: auto">
                         <input type="email" class="form-control" id="email" placeholder="Informe o código da sua Turma: COMP0000..." style="float:left; width:450px;"></input>
 			<button type="submit" class="btn btn-default" style="float:right"><span class="glyphicon glyphicon-search"></span></button>
+                        <br></br>
+                        <br></br>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a data-toggle="collapse" href="#buscaavancada" style="text-align: center">Consulta Geral <span class="glyphicon glyphicon-menu-down"></span></a></h4>
+                            </div>
+                            <div id="buscaavancada"  class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                     </form>
-		</div>
-          
+		</div>          
 	</div>
         
-    <!-- Rodapé -->
+        <hr></hr>
+            
+	<!-- Rodapé -->
         <br> </br>
 	<footer class="row">
             <div class="footer-above text-center">       
@@ -131,3 +150,4 @@
     </div>
     </h:body>
 </html>
+
