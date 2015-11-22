@@ -84,54 +84,90 @@
                 <div style="background-color:#777; height:2px;"></div>
             </nav>
     	</header>
-    
-	
-	<!-- Conteúdo da Página -->
+        
+        <!-- Conteúdo -->
         <br></br>
         <br></br>
         <br></br>
-	
-	<!-- Mapa do site -->
+        
+        <!-- Mapa do site -->
 	<div class="span9">
 		<ul class="breadcrumb">
 			<li><a href="index.xhtml">Início</a> <span class="divider"></span></li>
-			<li class="active">Login</li>
+			<li><a href="busca.xhtml">Busca</a> <span class="divider"></span></li>
+                        <li class="active">Resultado da Busca</li>
 		</ul>
 	</div>
-	
-	<!-- conteúdo -->
-	<div id="login" class="container-fluid" style="width:300px">
-		<h3>Login</h3>
-		<div class="row">
-			<div class="span1"> &nbsp;</div>
-			<div class="span4">
-				<div class="well">
-				<form action="admpainel.xhtml" method="POST" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off">
-					<div class="control-group">
-						<label class="control-label" for="inputEmail1">Email</label>
-						<div class="controls">
-                                                    <input class="span3"  type="text" id="inputEmail1" placeholder="Email" style="width:250px"></input>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="inputPassword1">Senha</label>
-						<div class="controls">
-                                                    <input type="password" class="span3"  id="inputPassword1" placeholder="Password" style="width:250px"></input>
-						</div>
-					</div>
-                                    <br></br>
-					<div class="control-group">
-						<div class="controls">
-							<button type="submit" class="btn btn-default">Entrar</button> <a href="index.html">Esqueceu sua senha?</a>
-						</div>
-					</div>
-				</form>
-				</div>
-			</div>
+        
+	<div class="container-fluid">
+		<h3>Resultado da Busca</h3>
+		
+		<div id="corpoBusca">
+			<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Horário</th>
+				<th>Segunda</th>
+				<th>Terça</th>
+				<th>Quarta</th>
+				<th>Quinta</th>
+				<th>Sexta</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>13:00h ás 14:00h</td>
+				<td><a href="#" title="Informações" data-toggle="popover" data-placement="Right" data-trigger="hover" data-content="Aqui estarão as informações teste">COMP0000</a></td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>14:00h ás 15:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>15:00h ás 16:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>16:00h ás 17:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>17:00h ás 18:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			<tr>
+				<td>18:00h ás 19:00h</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+				<td>COMP0000</td>
+			</tr>
+			</tbody>
+			</table>
 		</div>
 	</div>
-        
-            <hr></hr>
+        <hr></hr>
             
 	<!-- Rodapé -->
         <br> </br>
@@ -150,4 +186,3 @@
     </div>
     </h:body>
 </html>
-
