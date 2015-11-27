@@ -2,11 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     
-    <h:head>
+    <head>
     <!-- Definição dos Metadados da página -->
-    <meta charset="utf-8"></meta>
+    <!--<meta charset="utf-8"></meta>-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <meta name="description" content="Sistema de Salas de Aulas - Trabalho de SAD"></meta>
@@ -45,9 +46,9 @@
         });
     </script>
         <title>SAD</title>
-    </h:head>
+    </head>
     
-    <h:body>
+    <body>
         <div class="container-fluid">
         <!-- Menu Navegação -->
         <!-- Logo e alterna o menu nevegação em uma exibição agrupada para ficar melhor em celular-->
@@ -103,7 +104,8 @@
 		<h3>Resultado da Consulta</h3>
 		
 		<div id="corpoBusca">
-			<table class="table table-striped">
+			
+                    <!--<table class="table table-striped">
 			<thead>
 			<tr>
 				<th>Horário</th>
@@ -117,7 +119,7 @@
 			<tbody>
 			<tr>
 				<td>13:00h ás 14:00h</td>
-				<td><a href="#" title="Informações" data-toggle="popover" data-placement="Right" data-trigger="hover" data-content="Aqui estarão as informações teste">COMP0000</a></td>
+				<td>COMP0000</td>
 				<td>COMP0000</td>
 				<td>COMP0000</td>
 				<td>COMP0000</td>
@@ -164,8 +166,47 @@
 				<td>COMP0000</td>
 			</tr>
 			</tbody>
-			</table>
-		</div>
+			</table>-->
+                        
+                <h:dataTable class="table table-striped" var="turma" value="#{Negocio.getTurma}">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Professor"/>
+                        </f:facet>
+                        <h:outputText value="#{turma.getProfessor}" />
+                    </h:column>
+                    <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Dias / Horários"/>
+                    </f:facet>
+                <h:outputText value="#{turma.getDiasHorario}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Nº de Alunos"/>
+                </f:facet>
+                <h:outputText value="#{turma.getNAlunos}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Curso"/>
+                </f:facet>
+                <h:outputText value="#{turma.getCurso}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Período"/>
+                </f:facet>
+                <h:outputText value="#{turma.getPeriodo}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Acessibilidade"/>
+                </f:facet>
+                <h:outputText value="#{turma.getAcessibilidade}"/>
+            </h:column>
+        </h:dataTable>
+            </div>
 	</div>
         <hr></hr>
             
@@ -184,5 +225,5 @@
 	</footer>
             <br> </br>
     </div>
-    </h:body>
+    </body>
 </html>

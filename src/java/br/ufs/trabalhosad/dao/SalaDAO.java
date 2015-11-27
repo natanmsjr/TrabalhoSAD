@@ -1,43 +1,70 @@
 package br.ufs.trabalhosad.dao;
 
+import br.ufs.trabalhosad.util.HibernateUtil;
 import br.ufs.trabalhosad.modelo.Sala;
+import br.ufs.trabalhosad.util.ConnectionFactory;
+import java.sql.Connection;
 import javax.ejb.Stateless;
 import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 /**
  *
  * @author Natan
  */
 
 @Stateless
-public class SalaDAO extends DAO<Sala> {
-    private static final long serialVersionUID = 1L;
+public class SalaDAO implements DAO<Sala> {
+    private Connection conn;
     
-    public SalaDAO() {
-        super(Sala.class);
+    public SalaDAO() throws Exception{
+        try {
+            this.conn = ConnectionFactory.getConnection( );
+        } catch( Exception e ) {
+            throw new Exception( "Erro: " +
+                    "\n" + e.getMessage( ) );
+        }  
     }
 
-    public int adicionarQtdEstoque(int id, int qtd){
-		Sala s = entityManager.find(Sala.class, id);
-		int numero_cadeiras = s.getNumeroCadeiras();
-		s.setNumeroCadeiras(numero_cadeiras + qtd);
-		this.atualizar(s);
-		return numero_cadeiras + qtd;
-	}
-	
-	public int removerQtdEstoque(int id, int qtd){
-		Sala s = entityManager.find(Sala.class, id);
-		int numero_cadeiras = s.getNumeroCadeiras();
-		s.setNumeroCadeiras(numero_cadeiras + qtd);
-		this.atualizar(s);
-		return numero_cadeiras - qtd;
-	}
-	
-	public List<Sala> buscarPadrao(String padrao){
-		return entityManager.createQuery("select l from Livro l where l.titulo = " + padrao).getResultList();
-	}
-	
-	public List<Sala> livrosEscassos(){
-        String estoqueEscasso = "yes";
-		return entityManager.createQuery("select l from Livro l where l.estoque <= " + estoqueEscasso).getResultList();
-	}
+    @Override
+    public void inserir(Class<Sala> sala) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.save(sala);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void remover(Class<Sala> sala) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.delete(sala);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void atualizar(Class<Sala> sala) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.update(sala);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Sala buscar(Class<Sala> sala) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return (Sala) session.load(Sala.class, sala);
+    }
+
+    @Override
+    public List<Sala> listar() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List<Sala> lista = session.createQuery("from salas").list();
+        t.commit();
+        return lista;
+    }
 }

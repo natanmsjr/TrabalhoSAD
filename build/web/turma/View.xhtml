@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTurmaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTurmaLabel_idTurma}"/>
+                    <h:outputText value="#{turmaController.selected.idTurma}" title="#{bundle.ViewTurmaTitle_idTurma}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_disciplina}"/>
+                    <h:outputText value="#{turmaController.selected.disciplina}" title="#{bundle.ViewTurmaTitle_disciplina}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_professor}"/>
+                    <h:outputText value="#{turmaController.selected.professor}" title="#{bundle.ViewTurmaTitle_professor}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_diasHorario}"/>
+                    <h:outputText value="#{turmaController.selected.diasHorario}" title="#{bundle.ViewTurmaTitle_diasHorario}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_NAlunos}"/>
+                    <h:outputText value="#{turmaController.selected.NAlunos}" title="#{bundle.ViewTurmaTitle_NAlunos}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_curso}"/>
+                    <h:outputText value="#{turmaController.selected.curso}" title="#{bundle.ViewTurmaTitle_curso}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_período}"/>
+                    <h:outputText value="#{turmaController.selected.período}" title="#{bundle.ViewTurmaTitle_período}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_acessibilidade}"/>
+                    <h:outputText value="#{turmaController.selected.acessibilidade}" title="#{bundle.ViewTurmaTitle_acessibilidade}"/>
+                    <h:outputText value="#{bundle.ViewTurmaLabel_qualidade}"/>
+                    <h:outputText value="#{turmaController.selected.qualidade}" title="#{bundle.ViewTurmaTitle_qualidade}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{turmaController.destroyAndView}" value="#{bundle.ViewTurmaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTurmaEditLink}"/>
+                <br />
+                <h:commandLink action="#{turmaController.prepareCreate}" value="#{bundle.ViewTurmaCreateLink}" />
+                <br />
+                <h:commandLink action="#{turmaController.prepareList}" value="#{bundle.ViewTurmaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTurmaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

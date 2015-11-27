@@ -37,33 +37,17 @@ public class Negocio {
         this.turma = turma;
     }
     
-    public String prepararAdicionarTurma(){
-        turma = new Turma();
-        return "gerenciarTurma";
+    public DataModel getListarSalas() throws Exception {
+        List<Sala> lista = new SalaDAO().listar();
+        listaSalas = new ListDataModel(lista);
+        return listaSalas;
     }
     
-    public String prepararAlterarTurma(){
-        turma = (Turma)(listaTurma.getRowData());
-        return "gerenciarLivro";
+    public Sala getSala() {
+        return sala;
     }
     
-    public String excluirLivro(){
-        Turma turmaTemp = (Turma)(listaTurma.getRowData());
-        TurmaDAO dao = new TurmaDAO();
-        dao.remove(turmaTemp);
-        return "index";
-    }
-    
-    public String adicionarLivro(){
-        LivroDao dao = new LivroDaoImp();
-        dao.save(livro);
-        return "index";
-    }
-    
-    public String alterarLivro(){
-        LivroDao dao = new LivroDaoImp();
-        dao.update(livro);
-        return "index";
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 }
-

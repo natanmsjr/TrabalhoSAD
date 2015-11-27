@@ -2,8 +2,33 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="index2.xhtml" x="355" y="165" zoom="true"/>
-        <Node id="index.xhtml" x="159" y="163" zoom="true"/>
+        <Node id="turma/List.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="usuario/List.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="sala/Edit.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="resources/páginas/index.html" x="11" y="7" zoom="true"/>
+        <Node id="usuario/View.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="teste.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="periodo/Create.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="usuario/Create.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="sala/View.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="resources/páginas/admpainel.html" x="20" y="103" zoom="true"/>
+        <Node id="periodo/View.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="template.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="resources/páginas/resultadobusca.html" x="11" y="35" zoom="true"/>
+        <Node id="periodo/List.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="turma/Create.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="index.xhtml" x="132" y="241" zoom="true"/>
+        <Node id="resultadobusca.xhtml" x="626" y="68" zoom="true"/>
+        <Node id="busca.xhtml" x="686" y="186" zoom="true"/>
+        <Node id="admpainel.xhtml" x="514" y="359" zoom="true"/>
+        <Node id="periodo/Edit.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="usuario/Edit.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="sala/List.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="login.xhtml" x="457" y="234" zoom="true"/>
+        <Node id="turma/Edit.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="turma/View.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="resources/páginas/login.html" x="11" y="64" zoom="true"/>
+        <Node id="sala/Create.xhtml" x="150" y="450" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

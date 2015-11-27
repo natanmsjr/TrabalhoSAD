@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTurmaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_idTurma}" for="idTurma" />
+                    <h:inputText id="idTurma" value="#{turmaController.selected.idTurma}" title="#{bundle.CreateTurmaTitle_idTurma}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_idTurma}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_disciplina}" for="disciplina" />
+                    <h:inputText id="disciplina" value="#{turmaController.selected.disciplina}" title="#{bundle.CreateTurmaTitle_disciplina}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_disciplina}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_professor}" for="professor" />
+                    <h:inputText id="professor" value="#{turmaController.selected.professor}" title="#{bundle.CreateTurmaTitle_professor}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_professor}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_diasHorario}" for="diasHorario" />
+                    <h:inputText id="diasHorario" value="#{turmaController.selected.diasHorario}" title="#{bundle.CreateTurmaTitle_diasHorario}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_diasHorario}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_NAlunos}" for="NAlunos" />
+                    <h:inputText id="NAlunos" value="#{turmaController.selected.NAlunos}" title="#{bundle.CreateTurmaTitle_NAlunos}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_NAlunos}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_curso}" for="curso" />
+                    <h:inputText id="curso" value="#{turmaController.selected.curso}" title="#{bundle.CreateTurmaTitle_curso}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_curso}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_período}" for="período" />
+                    <h:inputText id="período" value="#{turmaController.selected.período}" title="#{bundle.CreateTurmaTitle_período}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_período}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_acessibilidade}" for="acessibilidade" />
+                    <h:inputText id="acessibilidade" value="#{turmaController.selected.acessibilidade}" title="#{bundle.CreateTurmaTitle_acessibilidade}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_acessibilidade}"/>
+                    <h:outputLabel value="#{bundle.CreateTurmaLabel_qualidade}" for="qualidade" />
+                    <h:inputText id="qualidade" value="#{turmaController.selected.qualidade}" title="#{bundle.CreateTurmaTitle_qualidade}" required="true" requiredMessage="#{bundle.CreateTurmaRequiredMessage_qualidade}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{turmaController.create}" value="#{bundle.CreateTurmaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{turmaController.prepareList}" value="#{bundle.CreateTurmaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTurmaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTurmaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_idTurma}" for="idTurma" />
+                    <h:inputText id="idTurma" value="#{turmaController.selected.idTurma}" title="#{bundle.EditTurmaTitle_idTurma}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_idTurma}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_disciplina}" for="disciplina" />
+                    <h:inputText id="disciplina" value="#{turmaController.selected.disciplina}" title="#{bundle.EditTurmaTitle_disciplina}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_disciplina}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_professor}" for="professor" />
+                    <h:inputText id="professor" value="#{turmaController.selected.professor}" title="#{bundle.EditTurmaTitle_professor}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_professor}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_diasHorario}" for="diasHorario" />
+                    <h:inputText id="diasHorario" value="#{turmaController.selected.diasHorario}" title="#{bundle.EditTurmaTitle_diasHorario}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_diasHorario}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_NAlunos}" for="NAlunos" />
+                    <h:inputText id="NAlunos" value="#{turmaController.selected.NAlunos}" title="#{bundle.EditTurmaTitle_NAlunos}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_NAlunos}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_curso}" for="curso" />
+                    <h:inputText id="curso" value="#{turmaController.selected.curso}" title="#{bundle.EditTurmaTitle_curso}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_curso}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_período}" for="período" />
+                    <h:inputText id="período" value="#{turmaController.selected.período}" title="#{bundle.EditTurmaTitle_período}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_período}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_acessibilidade}" for="acessibilidade" />
+                    <h:inputText id="acessibilidade" value="#{turmaController.selected.acessibilidade}" title="#{bundle.EditTurmaTitle_acessibilidade}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_acessibilidade}"/>
+                    <h:outputLabel value="#{bundle.EditTurmaLabel_qualidade}" for="qualidade" />
+                    <h:inputText id="qualidade" value="#{turmaController.selected.qualidade}" title="#{bundle.EditTurmaTitle_qualidade}" required="true" requiredMessage="#{bundle.EditTurmaRequiredMessage_qualidade}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{turmaController.update}" value="#{bundle.EditTurmaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTurmaViewLink}"/>
+                <br />
+                <h:commandLink action="#{turmaController.prepareList}" value="#{bundle.EditTurmaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTurmaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

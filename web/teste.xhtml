@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <f:view>
+            <h:form id="form1">
+                <h:panelGrid columns="3">
+                    <f:facet name="header">
+                        <h:outputText value="::Cadastro de Clientes"/>
+                    </f:facet>
+                    <h:outputText value="Nome:" />
+                    <h:inputText size="15" id="turma" 
+                                 value="#{turma.turma.turma}"
+                                 required="true"
+                                 requiredMessage="Campo obrigatório"/>
+                    <h:message for="nome"/>
+                    
+                    <h:outputText value="E-mail:" />
+                    <h:inputText size="30" id="email" 
+                                 value="#{cliC.cliente.email}" 
+                                 required="true"
+                                 requiredMessage="Campo obrigatório"/>
+                    <h:message for="email"/>                    
+                    
+                </h:panelGrid>
+                
+                <h:commandButton value="Salvar" action="#{cliC.salvar}" />
+                <h:commandButton value="Limpar" type="reset" />
+
+                <h:commandLink value="Cancelar" action="cancelar" immediate="true" />    
+            </h:form>
+        </f:view>
+    </body>
+</html>

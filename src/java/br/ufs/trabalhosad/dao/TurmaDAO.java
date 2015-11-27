@@ -1,47 +1,93 @@
 package br.ufs.trabalhosad.dao;
 
+import br.ufs.trabalhosad.util.HibernateUtil;
 import br.ufs.trabalhosad.modelo.Turma;
 import javax.ejb.Stateless;
 import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 /**
  *
  * @author Natan
  */
 
 @Stateless
-public class TurmaDAO extends DAO<Turma> {
+public class TurmaDAO implements DAO<Turma> {
     private static final long serialVersionUID = 1L;
+
+    public Turma getTurma(long id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return (Turma) session.load(Turma.class, id);
+    }
     
-    public TurmaDAO() {
-        super(Turma.class);
+    public List<Turma> list() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from turmas").list();
+        t.commit();
+        return lista;
+    }
+    
+    public void save(Turma turma) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.save(turma);
+        t.commit();
+    }
+    
+    public void remove(Turma turma) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.delete(turma);
+        t.commit();
+    }
+    
+    public void update(Turma turma) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.update(turma);
+        t.commit();
     }
 
-    public int adicionarQtdEstoque(int id, int qtd){
-        Turma t = entityManager.find(Turma.class, id);
-        int numero_alunos = t.getNumeroAlunos();
-        t.setNumeroAlunos(numero_alunos + qtd);
-        this.atualizar(t);
-        return numero_alunos + qtd;
+    @Override
+    public void inserir(Class<Turma> turma) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.save(turma);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public int removerQtdEstoque(int id, int qtd){
-        Turma t = entityManager.find(Turma.class, id);
-        int numero_alunos = t.getNumeroAlunos();
-        t.setNumeroAlunos(numero_alunos - qtd);
-        this.atualizar(t);
-        return numero_alunos - qtd;
+
+    @Override
+    public void remover(Class<Turma> turma) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.delete(turma);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public List<Turma> list(){
-        return entityManager.createQuery("select * from colegio").getResultList();
+
+    @Override
+    public void atualizar(Class<Turma> turma) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        session.update(turma);
+        t.commit();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public List<Turma> buscarPadrao(String padrao){
-        return entityManager.createQuery("select * from colegio l where l.titulo = " + padrao).getResultList();
+
+    @Override
+    public Turma buscar(Class<Turma> turma) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return (Turma) session.load(Turma.class, turma);
     }
-    
-    public List<Turma> livrosEscassos(){
-        String estoqueEscasso = "yes";
-        return entityManager.createQuery("select t from colegio t where l.estoque <= " + estoqueEscasso).getResultList();
+
+    @Override
+    public List<Turma> listar() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List<Turma> lista = session.createQuery("from turmas").list();
+        t.commit();
+        return lista;
     }
 }
